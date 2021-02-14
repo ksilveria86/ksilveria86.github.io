@@ -15,4 +15,16 @@ document.addEventListener('DOMContentLoaded', function(e) {
     mobileNav.querySelector('.close').addEventListener('click', function(e) {
         mobileNav.classList.remove('open');
     })
+
+    let gallery = document.querySelector('main .inner .images');
+    if (gallery) {
+        let main = gallery.querySelector('img.main');
+        let thumbnails = gallery.querySelectorAll('.other-images img');
+        thumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener('click', function(e) {
+                let src = thumbnail.getAttribute('src');
+                main.setAttribute('src', src);
+            })
+        })
+    }
 })

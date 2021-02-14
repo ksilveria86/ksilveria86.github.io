@@ -55,6 +55,7 @@ body.portfolio-item {
                             width: 100%;
                             background-color: col(light-gray);
                             height: calc((100vw - 4rem) / 4);
+                            cursor: pointer;
                         }
 
                         @include respond(tablet) {

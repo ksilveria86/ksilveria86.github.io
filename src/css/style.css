@@ -964,6 +964,7 @@ body.portfolio-item main .item .inner .images .other-images img {
   width: 100%;
   background-color: #F2F2F2;
   height: calc((100vw - 4rem) / 4);
+  cursor: pointer;
 }
 @media (min-width: 992px) {
   body.portfolio-item main .item .inner .images .other-images {
