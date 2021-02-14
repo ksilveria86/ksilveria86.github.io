@@ -19,3 +19,76 @@ nav {
         }
     }
 }
+
+nav.desktop-nav {
+    display: none;
+
+    @include respond(tablet) {
+        display: block;
+    }
+}
+
+nav.mobile-nav {
+    display: block;
+    padding: 1rem;
+
+    @include respond(tablet) {
+        display: none;
+    }
+
+    .hamburger {
+        width: 3.5rem;
+        height: 3.5rem;
+        padding: 1rem;
+
+        .stripe {
+            width: 100%;
+            height: 4px;
+            margin-bottom: 4px;
+            background-color: white;
+        }
+    }
+
+    .slideout {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        background-color: col(white);
+        z-index: 1;
+        transform: translateX(-100%);
+        transition: 500ms ease;
+
+        &.open {
+            transform: translateX(0);
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+            z-index: 2;
+
+            .close {
+                margin-bottom: 2rem;
+
+                svg {
+                    width: 15px;
+                    height: 15px;
+
+                    path {
+                        stroke-width: 3px;
+                        stroke: col(purple);
+                        stroke-linecap: round;
+                    }
+                }
+            }
+
+            a {
+                color: col(black);
+                font-size: 16px;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}

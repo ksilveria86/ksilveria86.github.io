@@ -33,7 +33,7 @@ body.home main {
 
             h1 {
                 color: col(white);
-                font-size: 84px;
+                font-size: #{'min(84px, 11vw)'};
                 letter-spacing: 0.05em;
                 position: relative;
                 display: inline-block;
@@ -65,40 +65,44 @@ body.home main {
             h2 {
                 color: col(white);
                 font-family: Krungthep, sans-serif;
-                font-size: 36px;
+                font-size: #{'min(36px, 5vw)'};
             }
         }
 
-        .scroll-directive {
+        .scroll-wrapper {
             position: absolute;
             bottom: 2.5rem;
             left: calc(50vw - 23px);
-            transform: translateY(0);
-            animation: bounce 2s ease infinite;
+            
+            .scroll-directive {
+                display: block;
+                transform: translateY(0);
+                animation: bounce 2s ease infinite;
 
-            img {
-                width: 46px;
-            }
-
-            &::after {
-                content: '';
-                position: absolute;
-                top: -26px;
-                left: -12px;
-                width: 70px;
-                height: 70px;
-                border-radius: 50%;
-                z-index: -1;
-                transition: 300ms ease;
-                transform: scale(0);
-            }
-
-            &:hover {
-                animation-play-state: paused;
+                img {
+                    width: 46px;
+                }
 
                 &::after {
-                    transform: scale(1);
-                    background-color: col(purple);
+                    content: '';
+                    position: absolute;
+                    top: -26px;
+                    left: -12px;
+                    width: 70px;
+                    height: 70px;
+                    border-radius: 50%;
+                    z-index: -1;
+                    transition: 300ms ease;
+                    transform: scale(0);
+                }
+
+                &:hover {
+                    animation-play-state: paused;
+
+                    &::after {
+                        transform: scale(1);
+                        background-color: col(purple);
+                    }
                 }
             }
         }
@@ -106,22 +110,37 @@ body.home main {
 
     .about-the-artist {
         .inner {
-            padding-top: 100px;
+            padding-top: 50px;
+            @include max-width;
+
+            @include respond(tablet) {
+                padding-top: 100px;
+            }
 
             img {
-                grid-column: 1 / span 3;
+                grid-column: span 12;
                 width: 100%;
                 height: auto;
+
+                @include respond(tablet) {
+                    grid-column: 1 / span 3;
+                }
             }
 
             .text {
-                grid-column: span 9;
+                grid-column: span 12;
                 max-width: 750px;
-                padding-left: 30px;
                 margin: auto 0;
+                padding-top: 2rem;
+
+                @include respond(tablet) {
+                    grid-column: span 9;
+                    padding-left: 30px;
+                    padding-top: 0;
+                }
 
                 h2 {
-                    font-size: 36px;
+                    font-size: #{'min(36px, 9vw)'};
                     padding-bottom: 1.5rem;
                     letter-spacing: 0.05em;
                 }
@@ -135,18 +154,32 @@ body.home main {
 
     .portfolio {
         .inner {
-            padding-top: 100px;
+            padding-top: 60px;
+            @include max-width;
+
+            @include respond(tablet) {
+                padding-top: 120px;
+            }
 
             .top {
                 grid-column: 1 / span 12;
-                display: flex;
                 justify-content: space-between;
                 align-items: baseline;
+                margin-bottom: 2rem;
+
+                @include respond(mobile) {
+                    display: flex;
+                    margin-bottom: 1.5rem;
+                }
 
                 h2 {
-                    font-size: 36px;
-                    padding-bottom: 1.5rem;
+                    font-size: #{'min(36px, 9vw)'};
                     letter-spacing: 0.05em;
+                    padding-bottom: 1rem;
+
+                    @include respond(mobile) {
+                        padding-bottom: 0;
+                    }
                 }
 
                 a {
@@ -155,25 +188,22 @@ body.home main {
             }
 
             .item {
-                display: block;
-                grid-column: span 4;
-                height: calc(((100vw - 8rem - 330px) / 3 + 90px) * 0.67);
-                overflow: hidden;
+                display: flex;
+                flex-direction: column;
                 position: relative;
                 cursor: pointer;
                 margin-bottom: 30px;
                 background-color: col(light-gray);
+                grid-column: span 12;
 
                 img {
                     width: 100%;
-                    height: 100%;
+                    height: calc((100vw - 8rem) * 0.67);
                     object-fit: cover;
+                    margin-bottom: -2px;
                 }
 
                 h4 {
-                    position: absolute;
-                    bottom: 0;
-                    left: 0;
                     width: 100%;
                     font-family: Lato, sans-serif;
                     background-color: col(purple);
@@ -181,8 +211,8 @@ body.home main {
                     padding: 0.75em 1em;
                     font-size: 14px;
                     font-weight: normal;
-                    transform: translateY(100%);
                     transition: 300ms ease;
+                    flex-grow: 1;
                 }
 
                 &:hover {
@@ -190,14 +220,51 @@ body.home main {
                         transform: translateY(0);
                     }
                 }
-                
+
+                @include respond(mobile) {
+                    grid-column: span 6;
+                    margin-bottom: 15px;
+                    
+                    img {
+                        height: calc(((100vw - 8rem - 330px) / 2 + 150px) * 0.67);
+                    }
+                }
+
+                @include respond(tablet) {
+                    grid-column: span 4;
+                    height: calc(((100vw - 8rem - 330px) / 3 + 90px) * 0.67);
+                    max-height: 293px;
+                    overflow: hidden;
+                    display: block;
+                    margin-bottom: 30px;
+
+                    img {
+                        height: 100%;
+                    }
+
+                    h4 {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        transform: translateY(100%);
+                    }
+                }
+
+                @include respond(max) {
+                    max-height: 382px;
+                }
             }
         }
     }
 
     .cv {
         .inner {
-            padding-top: 100px;
+            padding-top: 50px;
+            @include max-width;
+
+            @include respond(tablet) {
+                padding-top: 100px;
+            }
 
             .top {
                 grid-column: 1 / span 12;
@@ -218,24 +285,42 @@ body.home main {
 
             .cv-heading {
                 grid-column: 1 / span 12;
-                margin-bottom: 2rem;
+                margin-bottom: 1rem;
+                overflow: hidden;
+
+                @include respond(tablet) {
+                    margin-bottom: 2rem;
+                }
 
                 img {
                     width: 100%;
                     height: auto;
+                    transform: scale(1.5);
+
+                    @include respond(tablet) {
+                        transform: none;
+                    }
                 }
             }
 
             .contact-info, .artist-bio {
-                grid-column: 1 / span 5;
                 margin-bottom: 2rem;
+                grid-column: 1 / span 12;
+
+                @include respond(tablet) {
+                    grid-column: 1 / span 5;
+                }
 
                 h3 {
                     background-color: col(purple);
                     color: white;
                     padding: 0.75rem 2rem;
-                    font-size: 18px;
+                    font-size: 16px;
                     margin-bottom: 1em;
+
+                    @include respond(tablet) {
+                        font-size: 18px;
+                    }
                 }
 
                 a {
@@ -275,23 +360,40 @@ body.home main {
                 height: calc(100% + 2.5rem);
                 width: 2px;
                 background-color: col(black);
+                display: none;
+
+                @include respond(tablet) {
+                    display: block;
+                }
             }
 
             .content {
-                grid-column: span 6;
-                grid-row: 3 / span 3;
-                margin-left: -30px;
+                grid-column: span 12;
+
+                @include respond(tablet) {
+                    grid-column: span 6;
+                    grid-row: 3 / span 3;
+                    margin-left: -30px;
+                }
 
                 h4 {
                     color: col(purple);
-                    font-size: 18px;
+                    font-size: 16px;
                     padding: 0.75rem 0 1.25rem 0;
+
+                    @include respond(tablet) {
+                        font-size: 18px;
+                    }
                 }
 
                 h5 {
                     font-family: Lato, sans-serif;
-                    font-size: 16px;
+                    font-size: 14px;
                     padding-bottom: 0.2rem;
+
+                    @include respond(tablet) {
+                        font-size: 16px;
+                    }
                 }
 
                 p {
@@ -302,8 +404,12 @@ body.home main {
 
                 .item {
                     display: grid;
-                    grid-template-columns: 75px auto;
+                    grid-template-columns: 50px auto;
                     margin-bottom: 1rem;
+
+                    @include respond(tablet) {
+                        grid-template-columns: 75px auto;
+                    }
                     
                     & + h4 {
                         margin-top: 3rem;

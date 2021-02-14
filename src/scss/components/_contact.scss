@@ -2,23 +2,46 @@
     position: relative;
 
     .inner {
-        padding-top: 200px;
+        padding-top: 100px;
+        @include max-width;
+
+        @include respond(tablet) {
+            padding-top: 200px;
+        }
 
         .bg {
             position: absolute;
             left: 0;
-            top: 100px;
+            top: 50px;
             background-image: url('/assets/images/contact-bg.png');
             background-position: center center;
             background-repeat: no-repeat;
             background-size: cover;
-            width: calc(((100vw - 8rem - 330px) / 12 * 5) + 150px + 4rem);
-            height: calc(100% - 100px);
+            width: 100%;
+            height: 230px;
             z-index: -1;
+
+            @include respond(tablet) {
+                top: 100px;
+                width: calc(((100vw - 8rem - 330px) / 12 * 5) + 150px + 4rem);
+                height: calc(100% - 100px);
+            }
+
+            @include respond(xlarge) {
+                width: calc(50vw - 102px);
+            }
+
+            @include respond(max) {
+                width: calc(50vw - 135px);
+            }
         }
 
         .info {
-            grid-column: 1 / span 5;
+            grid-column: span 12;
+
+            @include respond(tablet) {
+                grid-column: 1 / span 5;
+            }
 
             h2 {
                 font-size: 36px;
@@ -49,16 +72,22 @@
         }
 
         form {
-            grid-column: 7 / span 6;
-            margin-left: -30px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            column-gap: 30px;
-            row-gap: 20px;
+            grid-column: span 12;
             padding-bottom: 5rem;
+            padding-top: 100px;
 
-            fieldset:last-of-type {
-                grid-column: 1 / span 2;
+            @include respond(tablet) {
+                grid-column: 7 / span 6;
+                margin-left: -30px;
+                padding-top: 0;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                column-gap: 30px;
+                row-gap: 20px;
+
+                fieldset:last-of-type {
+                    grid-column: 1 / span 2;
+                }
             }
 
             input[type=submit] {
@@ -72,6 +101,12 @@
             }
 
             fieldset {
+                margin-bottom: 1rem;
+
+                @include respond(tablet) {
+                    margin-bottom: 0;
+                }
+
                 label {
                     display: block;
                     font-size: 16px;

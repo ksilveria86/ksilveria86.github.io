@@ -7,10 +7,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.typekit.net/ipf8tpr.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="/src/css/style.css">
 </head>
 <body id="top" class="home">
-    <nav class="grid-parent">
+    <nav class=" desktop-nav grid-parent">
         <div class="links">
             <a href="/">Home</a>
             <a href="/portfolio.html">Portfolio</a>
@@ -19,23 +20,47 @@
             <a href="/#contact">Contact</a>
         </div>
     </nav>
+    <nav class="mobile-nav">
+        <div class="hamburger">
+            <div class="stripe"></div>
+            <div class="stripe"></div>
+            <div class="stripe"></div>
+        </div>
+        <div class="slideout">
+            <div class="links">
+                <div class="close">
+                    <svg viewport="0 0 15 15">
+                        <path d="M2,2L13,13"></path>
+                        <path d="M2,13L13,2"></path>
+                    </svg>
+                </div>
+                <a href="/">Home</a>
+                <a href="/portfolio.html">Portfolio</a>
+                <a href="/#about-the-artist">About the Artist</a>
+                <a href="/#cv">CV</a>
+                <a href="/#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
 
     <main>
         <section class="hero">
             <div class="digit"></div>
             <div class="inner grid-parent">
                 <div class="text-wrapper">
-                    <h1>Kati <span class="spacer"></span>Silveria</h1>
-                    <h2>Visual Storyteller + Printmaker</h2>
+                    <h1 data-aos="fade-right">Kati <span class="spacer"></span>Silveria</h1>
+                    <h2 data-aos="fade-right" data-aos-delay="400">Visual Storyteller + Printmaker</h2>
                 </div>
             </div>
-            <a href="#about-the-artist" class="scroll-directive">
-                <img src="/assets/images/down-arrow.svg" alt="Scroll Down">
-            </a>
+            <div class="scroll-wrapper" data-aos="fade-up" data-aos-delay="800" data-aos-anchor="#top">
+                <a href="#about-the-artist" class="scroll-directive">
+                    <img src="/assets/images/down-arrow.svg" alt="Scroll Down">
+                </a>
+            </div>
         </section>
 
         <section id="about-the-artist" class="about-the-artist">
-            <div class="inner grid-parent">
+            <div class="inner grid-parent" data-aos="fade-up">
                 <img src="/assets/images/headshot.png" alt="Katie Silveria Headshot">
                 <div class="text">
                     <h2>About the Artist</h2>
@@ -52,33 +77,33 @@
             </div>
         </section>
 
-        <section class="portfolio">
+        <section class="portfolio" id="portfolio">
             <div class="inner grid-parent">
-                <div class="top">
+                <div class="top"data-aos="fade-up">
                     <h2>Portfolio / Work</h2>
                     <a href="/portfolio.html">View All</a>
                 </div>
-                <a href="portfolio/the-adventures-of-crazy-space-pigeon-and-catowl.html" class="item">
+                <a href="portfolio/the-adventures-of-crazy-space-pigeon-and-catowl.html" class="item" data-aos="fade-up" data-aos-delay="200" data-aos-anchor="#portfolio">
                     <img src="/assets/images/projects/adventures-of-crazy-space-pigeon-and-catowl/main.jpg" alt="adventures-of-crazy-space-pigeon-and-catowl-main">
                     <h4>The Adventures of Crazy Space Pigeon and Catowl</h4>
                 </a>
-                <a class="item">
+                <a class="item" data-aos="fade-up" data-aos-delay="400" data-aos-anchor="#portfolio">
                     <img src="" alt="">
                     <h4>Project Title</h4>
                 </a>
-                <a class="item">
+                <a class="item" data-aos="fade-up" data-aos-delay="600" data-aos-anchor="#portfolio">
                     <img src="" alt="">
                     <h4>Project Title</h4>
                 </a>
-                <a class="item">
+                <a class="item" data-aos="fade-up" data-aos-delay="800" data-aos-anchor="#portfolio">
                     <img src="" alt="">
                     <h4>Project Title</h4>
                 </a>
-                <a class="item">
+                <a class="item" data-aos="fade-up" data-aos-delay="1000" data-aos-anchor="#portfolio">
                     <img src="" alt="">
                     <h4>Project Title</h4>
                 </a>
-                <a class="item">
+                <a class="item" data-aos="fade-up" data-aos-delay="1200" data-aos-anchor="#portfolio">
                     <img src="" alt="">
                     <h4>Project Title</h4>
                 </a>
@@ -86,7 +111,7 @@
         </section>
 
         <section id="cv" class="cv">
-            <div class="inner grid-parent">
+            <div class="inner grid-parent" data-aos="fade-up">
                 <div class="top">
                     <h2>CV</h2>
                     <a href="/assets/silveria_kati_cv.pdf" download>Download CV</a>
@@ -165,12 +190,12 @@
         <section id="contact" class="contact">
             <div class="inner grid-parent">
                 <div class="bg"></div>
-                <div class="info">
+                <div class="info" data-aos="fade-up">
                     <h2>Contact</h2>
                     <a href="mailto:ksilveria68@outlook.com"><img src="/assets/images/email.svg" alt="email">ksilveria68@outlook.com</a>
                     <a href="https://www.instagram.com/crazyspacepigeon/" target="_blank"><img src="/assets/images/insta.svg" alt="Instagram">@crazyspacepigeon</a>
                 </div>
-                <form action="">
+                <form action="https://formspree.io/f/{form_id}" method="post" data-aos="fade-up">
                     <fieldset>
                         <label for="name">Name</label>
                         <input type="text" name="name">
@@ -194,5 +219,7 @@
             <a href="#top">Back to Top</a>
         </div>
     </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/src/js/main.js"></script>
 </body>
 </html>
