@@ -828,7 +828,7 @@ body.portfolio main .portfolio .inner section {
   grid-template-columns: repeat(12, 1fr);
   column-gap: 15px;
   grid-column: span 12;
-  padding-top: 2rem;
+  padding-top: 3rem;
 }
 @media (min-width: 992px) {
   body.portfolio main .portfolio .inner section {
