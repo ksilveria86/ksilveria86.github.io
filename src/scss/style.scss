@@ -2,3 +2,12 @@
 @import "global/mixins";
 @import "global/colors";
 @import "global/typography";
+@import "global/all";
+
+@import "components/nav";
+@import "components/footer";
+@import "components/contact";
+
+@import "pages/home";
+@import "pages/portfolio";
+@import "pages/portfolio-item";

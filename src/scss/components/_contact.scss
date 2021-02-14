@@ -1,0 +1,93 @@
+.contact {
+    position: relative;
+
+    .inner {
+        padding-top: 200px;
+
+        .bg {
+            position: absolute;
+            left: 0;
+            top: 100px;
+            background-image: url('/assets/images/contact-bg.png');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: calc(((100vw - 8rem - 330px) / 12 * 5) + 150px + 4rem);
+            height: calc(100% - 100px);
+            z-index: -1;
+        }
+
+        .info {
+            grid-column: 1 / span 5;
+
+            h2 {
+                font-size: 36px;
+                padding-bottom: 1.5rem;
+                letter-spacing: 0.05em;
+                color: col(white);
+            }
+
+            a {
+                color: col(white);
+                font-family: Lato, sans-serif;
+                text-decoration-color: transparent;
+                display: flex;
+                align-items: center;
+                letter-spacing: 0;
+                font-size: 14px;
+                margin-bottom: 0.75em;
+
+                img {
+                    margin-right: 1em;
+                    filter: brightness(0) invert(1);
+                }
+
+                &:hover {
+                    text-decoration-color: col(white);
+                }
+            }
+        }
+
+        form {
+            grid-column: 7 / span 6;
+            margin-left: -30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 30px;
+            row-gap: 20px;
+            padding-bottom: 5rem;
+
+            fieldset:last-of-type {
+                grid-column: 1 / span 2;
+            }
+
+            input[type=submit] {
+                grid-column: 2 / 3;
+                margin-left: auto;
+                background-color: col(purple);
+                padding: 1em 2.3em 0.8em 2.5em;
+                color: col(white);
+                font-family: Krungthep, sans-serif;
+                border: none;
+            }
+
+            fieldset {
+                label {
+                    display: block;
+                    font-size: 16px;
+                    margin-bottom: 0.5em;
+                }
+                input, textarea {
+                    display: block;
+                    width: 100%;
+                    background-color: col(light-gray);
+                    border: none;
+                    font-size: 14px;
+                    padding: 0.75em 1em;
+                    resize: vertical;
+                    min-height: 3em;
+                }
+            }
+        }
+    }
+}

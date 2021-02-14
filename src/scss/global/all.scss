@@ -1,0 +1,11 @@
+.grid-parent {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 15px;
+    padding: 0 2rem;
+
+    @include respond(tablet) {
+        padding: 0 4rem;
+        column-gap: 30px;
+    }
+}

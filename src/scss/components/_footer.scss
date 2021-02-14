@@ -1,0 +1,13 @@
+footer {
+    background-color: col(black);
+    padding: 3rem 0;
+
+    .inner {
+        a {
+            grid-column: 1 / span 12;
+            margin-left: auto;
+            color: col(white);
+            font-size: 14px;
+        }
+    }
+}

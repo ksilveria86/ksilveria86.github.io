@@ -1,0 +1,21 @@
+nav {
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+
+    .links {
+        grid-column: 1 / span 12;
+        padding: 2.5rem 0;
+
+        a {
+            text-decoration-color: transparent;
+            color: col(white);
+            font-size: 14px;
+            margin-right: 2rem;
+
+            &:hover {
+                text-decoration-color: col(white);
+            }
+        }
+    }
+}

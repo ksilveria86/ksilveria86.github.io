@@ -19,6 +19,14 @@ body {
   line-height: 1;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 ol, ul {
   list-style: none;
 }
@@ -61,11 +69,574 @@ h3, h4, h5, h6 {
 
 p {
   font-size: 14px;
+  line-height: 1.4;
 }
 @media (min-width: 992px) {
   p {
     font-size: 16px;
   }
+}
+
+a {
+  font-family: Krungthep, sans-serif;
+  color: #785DA5;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  letter-spacing: 0.03em;
+  transition: 300ms ease;
+}
+a:hover {
+  color: black;
+}
+
+input:focus, textarea:focus {
+  outline: 2px solid #785DA5;
+}
+
+.grid-parent {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 15px;
+  padding: 0 2rem;
+}
+@media (min-width: 992px) {
+  .grid-parent {
+    padding: 0 4rem;
+    column-gap: 30px;
+  }
+}
+
+nav {
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+}
+nav .links {
+  grid-column: 1/span 12;
+  padding: 2.5rem 0;
+}
+nav .links a {
+  text-decoration-color: transparent;
+  color: #FFFFFF;
+  font-size: 14px;
+  margin-right: 2rem;
+}
+nav .links a:hover {
+  text-decoration-color: #FFFFFF;
+}
+
+footer {
+  background-color: #000000;
+  padding: 3rem 0;
+}
+footer .inner a {
+  grid-column: 1/span 12;
+  margin-left: auto;
+  color: #FFFFFF;
+  font-size: 14px;
+}
+
+.contact {
+  position: relative;
+}
+.contact .inner {
+  padding-top: 200px;
+}
+.contact .inner .bg {
+  position: absolute;
+  left: 0;
+  top: 100px;
+  background-image: url("/assets/images/contact-bg.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: calc(((100vw - 8rem - 330px) / 12 * 5) + 150px + 4rem);
+  height: calc(100% - 100px);
+  z-index: -1;
+}
+.contact .inner .info {
+  grid-column: 1/span 5;
+}
+.contact .inner .info h2 {
+  font-size: 36px;
+  padding-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+  color: #FFFFFF;
+}
+.contact .inner .info a {
+  color: #FFFFFF;
+  font-family: Lato, sans-serif;
+  text-decoration-color: transparent;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0;
+  font-size: 14px;
+  margin-bottom: 0.75em;
+}
+.contact .inner .info a img {
+  margin-right: 1em;
+  filter: brightness(0) invert(1);
+}
+.contact .inner .info a:hover {
+  text-decoration-color: #FFFFFF;
+}
+.contact .inner form {
+  grid-column: 7/span 6;
+  margin-left: -30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 30px;
+  row-gap: 20px;
+  padding-bottom: 5rem;
+}
+.contact .inner form fieldset:last-of-type {
+  grid-column: 1/span 2;
+}
+.contact .inner form input[type=submit] {
+  grid-column: 2/3;
+  margin-left: auto;
+  background-color: #785DA5;
+  padding: 1em 2.3em 0.8em 2.5em;
+  color: #FFFFFF;
+  font-family: Krungthep, sans-serif;
+  border: none;
+}
+.contact .inner form fieldset label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 0.5em;
+}
+.contact .inner form fieldset input, .contact .inner form fieldset textarea {
+  display: block;
+  width: 100%;
+  background-color: #F2F2F2;
+  border: none;
+  font-size: 14px;
+  padding: 0.75em 1em;
+  resize: vertical;
+  min-height: 3em;
+}
+
+body.home main .hero {
+  background-image: url("/assets/images/hero-bg.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+body.home main .hero .digit {
+  background-image: url("/assets/images/digit-purple.png");
+  background-size: contain;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  width: 50%;
+  height: 80%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transform: scaleX(-1);
+}
+body.home main .hero .inner {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+@media (min-width: 2300px) {
+  body.home main .hero .inner {
+    max-width: 1900px;
+  }
+}
+body.home main .hero .inner .text-wrapper {
+  grid-column: 1/span 12;
+  padding-bottom: 15vh;
+}
+body.home main .hero .inner h1 {
+  color: #FFFFFF;
+  font-size: 84px;
+  letter-spacing: 0.05em;
+  position: relative;
+  display: inline-block;
+}
+body.home main .hero .inner h1 .spacer {
+  display: inline-block;
+  width: 10px;
+}
+body.home main .hero .inner h1::before {
+  content: "Kati";
+  color: transparent;
+  -webkit-text-stroke: 0.1px #785DA5;
+  position: absolute;
+  top: -0.03em;
+  left: 0.03em;
+}
+body.home main .hero .inner h1::after {
+  content: "Silveria";
+  color: transparent;
+  -webkit-text-stroke: 0.1px #785DA5;
+  position: absolute;
+  top: -0.03em;
+  right: -0.03em;
+}
+body.home main .hero .inner h2 {
+  color: #FFFFFF;
+  font-family: Krungthep, sans-serif;
+  font-size: 36px;
+}
+body.home main .hero .scroll-directive {
+  position: absolute;
+  bottom: 2.5rem;
+  left: calc(50vw - 23px);
+  transform: translateY(0);
+  animation: bounce 2s ease infinite;
+}
+body.home main .hero .scroll-directive img {
+  width: 46px;
+}
+body.home main .hero .scroll-directive::after {
+  content: "";
+  position: absolute;
+  top: -26px;
+  left: -12px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  z-index: -1;
+  transition: 300ms ease;
+  transform: scale(0);
+}
+body.home main .hero .scroll-directive:hover {
+  animation-play-state: paused;
+}
+body.home main .hero .scroll-directive:hover::after {
+  transform: scale(1);
+  background-color: #785DA5;
+}
+body.home main .about-the-artist .inner {
+  padding-top: 100px;
+}
+body.home main .about-the-artist .inner img {
+  grid-column: 1/span 3;
+  width: 100%;
+  height: auto;
+}
+body.home main .about-the-artist .inner .text {
+  grid-column: span 9;
+  max-width: 750px;
+  padding-left: 30px;
+  margin: auto 0;
+}
+body.home main .about-the-artist .inner .text h2 {
+  font-size: 36px;
+  padding-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+}
+body.home main .about-the-artist .inner .text p {
+  padding-bottom: 1em;
+}
+body.home main .portfolio .inner {
+  padding-top: 100px;
+}
+body.home main .portfolio .inner .top {
+  grid-column: 1/span 12;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+body.home main .portfolio .inner .top h2 {
+  font-size: 36px;
+  padding-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+}
+body.home main .portfolio .inner .top a {
+  font-size: 14px;
+}
+body.home main .portfolio .inner .item {
+  display: block;
+  grid-column: span 4;
+  height: calc(((100vw - 8rem - 330px) / 3 + 90px) * 0.67);
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 30px;
+  background-color: #F2F2F2;
+}
+body.home main .portfolio .inner .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+body.home main .portfolio .inner .item h4 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-family: Lato, sans-serif;
+  background-color: #785DA5;
+  color: white;
+  padding: 0.75em 1em;
+  font-size: 14px;
+  font-weight: normal;
+  transform: translateY(100%);
+  transition: 300ms ease;
+}
+body.home main .portfolio .inner .item:hover h4 {
+  transform: translateY(0);
+}
+body.home main .cv .inner {
+  padding-top: 100px;
+}
+body.home main .cv .inner .top {
+  grid-column: 1/span 12;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+body.home main .cv .inner .top h2 {
+  font-size: 36px;
+  padding-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+}
+body.home main .cv .inner .top a {
+  font-size: 14px;
+}
+body.home main .cv .inner .cv-heading {
+  grid-column: 1/span 12;
+  margin-bottom: 2rem;
+}
+body.home main .cv .inner .cv-heading img {
+  width: 100%;
+  height: auto;
+}
+body.home main .cv .inner .contact-info, body.home main .cv .inner .artist-bio {
+  grid-column: 1/span 5;
+  margin-bottom: 2rem;
+}
+body.home main .cv .inner .contact-info h3, body.home main .cv .inner .artist-bio h3 {
+  background-color: #785DA5;
+  color: white;
+  padding: 0.75rem 2rem;
+  font-size: 18px;
+  margin-bottom: 1em;
+}
+body.home main .cv .inner .contact-info a, body.home main .cv .inner .artist-bio a {
+  color: #000000;
+  font-family: Lato, sans-serif;
+  text-decoration-color: transparent;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0;
+  font-size: 14px;
+  margin-bottom: 0.75em;
+}
+body.home main .cv .inner .contact-info a img, body.home main .cv .inner .artist-bio a img {
+  margin-right: 1em;
+}
+body.home main .cv .inner .contact-info a:hover, body.home main .cv .inner .artist-bio a:hover {
+  text-decoration-color: #000000;
+}
+body.home main .cv .inner .contact-info p, body.home main .cv .inner .artist-bio p {
+  padding: 0 2rem 1em 2rem;
+  font-size: 14px;
+}
+body.home main .cv .inner .contact-info {
+  display: flex;
+  flex-direction: column;
+}
+body.home main .cv .inner .divider {
+  grid-column: 6/span 1;
+  grid-row: 3/span 3;
+  margin-top: -2.1rem;
+  height: calc(100% + 2.5rem);
+  width: 2px;
+  background-color: #000000;
+}
+body.home main .cv .inner .content {
+  grid-column: span 6;
+  grid-row: 3/span 3;
+  margin-left: -30px;
+}
+body.home main .cv .inner .content h4 {
+  color: #785DA5;
+  font-size: 18px;
+  padding: 0.75rem 0 1.25rem 0;
+}
+body.home main .cv .inner .content h5 {
+  font-family: Lato, sans-serif;
+  font-size: 16px;
+  padding-bottom: 0.2rem;
+}
+body.home main .cv .inner .content p {
+  color: #4C4C4C;
+  font-size: 14px;
+  padding-bottom: 0.2rem;
+}
+body.home main .cv .inner .content .item {
+  display: grid;
+  grid-template-columns: 75px auto;
+  margin-bottom: 1rem;
+}
+body.home main .cv .inner .content .item + h4 {
+  margin-top: 3rem;
+}
+
+@keyframes bounce {
+  50% {
+    transform: translateY(-10px);
+  }
+}
+body.portfolio nav .links a {
+  color: #000000;
+}
+body.portfolio main {
+  padding-top: 3rem;
+}
+body.portfolio main .portfolio .inner {
+  padding-top: 100px;
+}
+body.portfolio main .portfolio .inner .top {
+  grid-column: 1/span 12;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+body.portfolio main .portfolio .inner .top h1 {
+  font-size: 36px;
+  padding-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+}
+body.portfolio main .portfolio .inner .top a {
+  font-size: 14px;
+  margin-left: 2rem;
+}
+body.portfolio main .portfolio .inner section {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 30px;
+  grid-column: span 12;
+  padding-top: 1rem;
+}
+body.portfolio main .portfolio .inner section h2 {
+  grid-column: span 12;
+  font-family: Krungthep, sans-serif;
+  color: #4C4C4C;
+  font-size: 21px;
+  margin-bottom: 1em;
+}
+body.portfolio main .portfolio .inner section .item {
+  display: block;
+  grid-column: span 4;
+  height: calc(((100vw - 8rem - 330px) / 3 + 90px) * 0.67);
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 30px;
+  background-color: #F2F2F2;
+}
+body.portfolio main .portfolio .inner section .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+body.portfolio main .portfolio .inner section .item h4 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-family: Lato, sans-serif;
+  background-color: #785DA5;
+  color: white;
+  padding: 0.75em 1em;
+  font-size: 14px;
+  font-weight: normal;
+  transform: translateY(100%);
+  transition: 300ms ease;
+}
+body.portfolio main .portfolio .inner section .item:hover h4 {
+  transform: translateY(0);
+}
+
+body.portfolio-item nav .links a {
+  color: #000000;
+}
+body.portfolio-item main {
+  padding-top: 96px;
+  position: relative;
+}
+body.portfolio-item main .item .inner .images {
+  grid-column: 1/span 6;
+  width: calc(100% + 4rem);
+  margin-left: -4rem;
+}
+body.portfolio-item main .item .inner .images img.main {
+  width: 100%;
+  height: calc(((100vw - 8rem - 330px) / 2) + 150px + 4rem);
+  object-fit: contain;
+  object-position: center;
+  background-color: #F2F2F2;
+}
+body.portfolio-item main .item .inner .images .other-images {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+body.portfolio-item main .item .inner .images .other-images img {
+  width: 100%;
+  background-color: #F2F2F2;
+  height: calc((((100vw - 8rem - 330px) / 2) + 150px + 4rem) / 6);
+}
+body.portfolio-item main .item .inner .text {
+  grid-column: 8/span 5;
+  margin-left: -30px;
+  padding: 3rem 0;
+}
+body.portfolio-item main .item .inner .text a {
+  font-size: 14px;
+  display: inline-block;
+  margin-bottom: 3rem;
+}
+body.portfolio-item main .item .inner .text h1 {
+  font-size: 36px;
+  margin-bottom: 3rem;
+  line-height: 1.3;
+}
+body.portfolio-item main .item .inner .text p {
+  padding-bottom: 0.25em;
+}
+body.portfolio-item main .accent {
+  width: 400px;
+  height: 200px;
+  background-color: #785DA5;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: rotate(-60deg) translate(110px, 160px);
+  z-index: -1;
+}
+body.portfolio-item footer .links {
+  grid-column: span 12;
+  display: flex;
+}
+body.portfolio-item footer a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-family: Lato, sans-serif;
+  margin: 0 2rem 0 0;
+  font-size: 12px;
+  flex-wrap: nowrap;
+}
+body.portfolio-item footer a img {
+  filter: brightness(0) invert(1);
+  margin-right: 0.5rem;
+}
+body.portfolio-item footer p {
+  color: #FFFFFF;
+  margin-left: auto;
+  font-size: 12px;
 }
 
 /*# sourceMappingURL=style.css.map */
