@@ -9,11 +9,17 @@ document.addEventListener('DOMContentLoaded', function(e) {
     
     // Nav
     let mobileNav = document.querySelector('nav.mobile-nav .slideout');
+    let navLinks = mobileNav.querySelectorAll('a');
     document.querySelector('nav.mobile-nav .hamburger').addEventListener('click', function(e) {
         mobileNav.classList.add('open');
     })
     mobileNav.querySelector('.close').addEventListener('click', function(e) {
         mobileNav.classList.remove('open');
+    })
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            mobileNav.classList.remove('open');
+        })
     })
 
     let gallery = document.querySelector('main .inner .images');
