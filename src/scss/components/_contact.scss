@@ -98,6 +98,12 @@
                 color: col(white);
                 font-family: Krungthep, sans-serif;
                 border: none;
+                cursor: pointer;
+                transition: 300ms ease;
+
+                &:hover {
+                    filter: brightness(1.2);
+                }
             }
 
             fieldset {

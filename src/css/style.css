@@ -324,6 +324,11 @@ footer .inner a {
   color: #FFFFFF;
   font-family: Krungthep, sans-serif;
   border: none;
+  cursor: pointer;
+  transition: 300ms ease;
+}
+.contact .inner form input[type=submit]:hover {
+  filter: brightness(1.2);
 }
 .contact .inner form fieldset {
   margin-bottom: 1rem;
