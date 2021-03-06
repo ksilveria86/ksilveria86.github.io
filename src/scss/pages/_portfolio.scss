@@ -36,6 +36,10 @@ body.portfolio {
                         font-size: #{'min(36px, 9vw)'};
                         padding-bottom: 1.5rem;
                         letter-spacing: 0.05em;
+
+                        @include respond(tablet) {
+                            padding-bottom: 0;
+                        }
                     }
     
                     a {
@@ -63,10 +67,15 @@ body.portfolio {
                     grid-template-columns: repeat(12, 1fr);
                     column-gap: 15px;
                     grid-column: span 12;
-                    padding-top: 3rem;
+                    padding-top: 78px;
+                    margin-bottom: -30px;
+
+                    &:first-of-type {
+                        padding-top: 3rem;
+                    }
 
                     @include respond(tablet) {
-                        padding-top: 1rem;
+                        padding-top: 46px;
                         column-gap: 30px;
                     }
 
