@@ -503,6 +503,35 @@ body.home main .about-the-artist .inner .text h2 {
 body.home main .about-the-artist .inner .text p {
   padding-bottom: 1em;
 }
+body.home main .general-artist-statement .inner {
+  padding-top: 50px;
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+@media (min-width: 2300px) {
+  body.home main .general-artist-statement .inner {
+    max-width: 1900px;
+  }
+}
+@media (min-width: 992px) {
+  body.home main .general-artist-statement .inner {
+    padding-top: 100px;
+  }
+}
+body.home main .general-artist-statement .inner .text {
+  grid-column: span 12;
+  max-width: 950px;
+  margin: auto 0;
+}
+body.home main .general-artist-statement .inner .text h2 {
+  font-size: min(36px, 9vw);
+  padding-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+}
+body.home main .general-artist-statement .inner .text p {
+  padding-bottom: 1em;
+}
 body.home main .portfolio .inner {
   padding-top: 60px;
   width: 100%;
